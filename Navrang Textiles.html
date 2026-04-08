@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textiles – Fabric Shop, Belagavi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --deep-blue: #0F1D38;
+    --blue: #2C4A8A;
+    --gold: #C8962A;
+    --light-gold: #E8B84B;
+    --cream: #F7F3ED;
+    --white: #FDFCFA;
+    --text: #2A2015;
+    --muted: #7A6E60;
+    --border: rgba(200,150,42,0.25);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; width:100%; z-index:100;
+    background:rgba(27,42,74,0.97); backdrop-filter:blur(12px);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 60px;
+  }
+  .logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:700; color:var(--light-gold); letter-spacing:1px; }
+  .logo-sub { font-size:.65rem; letter-spacing:4px; text-transform:uppercase; color:rgba(232,184,75,0.6); display:block; line-height:1; }
+  .nav-links { display:flex; gap:32px; list-style:none; }
+  .nav-links a { color:rgba(247,243,237,0.7); text-decoration:none; font-size:.8rem; letter-spacing:1.5px; text-transform:uppercase; transition:.3s; }
+  .nav-links a:hover { color:var(--light-gold); }
+  .nav-wa { background:var(--gold); color:#fff; padding:10px 22px; font-size:.8rem; letter-spacing:1px; text-decoration:none; text-transform:uppercase; transition:.3s; border-radius:2px; display:flex; align-items:center; gap:8px; }
+  .nav-wa:hover { background:#b0821e; }
+
+  /* HERO */
+  #hero {
+    min-height:100vh; display:flex; align-items:center;
+    background:linear-gradient(135deg, var(--deep-blue) 0%, var(--navy) 50%, #2A3D5A 100%);
+    position:relative; overflow:hidden;
+  }
+  .hero-pattern {
+    position:absolute; inset:0; opacity:.06;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8962A' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-glow { position:absolute; bottom:-100px; right:-100px; width:500px; height:500px; background:radial-gradient(circle,rgba(200,150,42,0.15),transparent 70%); }
+  .hero-inner { max-width:1200px; margin:0 auto; padding:0 60px; display:grid; grid-template-columns:1.1fr 1fr; gap:80px; align-items:center; z-index:2; position:relative; }
+  .hero-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+  .eyebrow-line { width:40px; height:1px; background:var(--gold); }
+  .eyebrow-text { font-size:.7rem; letter-spacing:4px; text-transform:uppercase; color:var(--gold); }
+  .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,7vw,5.5rem); line-height:1.05; color:var(--cream); font-weight:700; margin-bottom:24px; }
+  .hero-title em { color:var(--light-gold); font-style:italic; }
+  .hero-sub { font-size:1rem; color:rgba(247,243,237,0.65); line-height:1.8; margin-bottom:40px; max-width:460px; font-weight:300; }
+  .hero-btns { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:50px; }
+  .btn-gold { background:var(--gold); color:#fff; padding:13px 32px; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; text-decoration:none; transition:.3s; }
+  .btn-gold:hover { background:#b0821e; }
+  .btn-outline { border:1px solid rgba(232,184,75,0.4); color:var(--light-gold); padding:13px 32px; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; text-decoration:none; transition:.3s; }
+  .btn-outline:hover { border-color:var(--light-gold); }
+  .trust-row { display:flex; gap:30px; flex-wrap:wrap; }
+  .trust-item { display:flex; align-items:center; gap:8px; }
+  .trust-item span { font-size:.75rem; color:rgba(247,243,237,0.5); letter-spacing:1px; }
+  .trust-icon { font-size:1.1rem; }
+  .hero-visual { display:flex; flex-direction:column; gap:16px; }
+  .hero-main-box { background:linear-gradient(160deg,#2A4070,#1B2A4A); border:1px solid var(--border); aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; font-size:6rem; position:relative; overflow:hidden; }
+  .hero-main-box::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(15,29,56,.6),transparent); }
+  .hero-small-boxes { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .hero-small-box { background:linear-gradient(160deg,#1B2A4A,#243560); border:1px solid var(--border); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; font-size:2.5rem; }
+
+  /* ABOUT STRIP */
+  .about-strip { background:var(--white); padding:60px; }
+  .about-strip-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 3fr; gap:60px; align-items:center; }
+  .about-label { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; color:var(--navy); }
+  .about-body { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .about-para { font-size:.95rem; color:var(--muted); line-height:1.8; }
+  .about-para strong { color:var(--navy); font-weight:500; }
+
+  /* CATALOGUE */
+  #catalogue { background:var(--cream); padding:80px 60px; }
+  .cat-inner { max-width:1200px; margin:0 auto; }
+  .section-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .section-eyebrow .line { width:30px; height:1px; background:var(--gold); }
+  .section-eyebrow span { font-size:.7rem; letter-spacing:4px; text-transform:uppercase; color:var(--gold); }
+  .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3rem); font-weight:700; color:var(--navy); margin-bottom:40px; }
+  .filter-row { display:flex; gap:10px; margin-bottom:40px; flex-wrap:wrap; }
+  .filter { background:none; border:1px solid var(--navy); color:var(--navy); padding:8px 20px; font-family:'DM Sans',sans-serif; font-size:.8rem; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:.3s; }
+  .filter.active,.filter:hover { background:var(--navy); color:var(--cream); }
+  .cat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; }
+  .cat-card { background:var(--white); border:1px solid rgba(27,42,74,0.1); overflow:hidden; transition:.3s; }
+  .cat-card:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:0 12px 40px rgba(27,42,74,0.1); }
+  .cat-img { aspect-ratio:3/2; display:flex; align-items:center; justify-content:center; font-size:3.5rem; position:relative; }
+  .cat-badge { position:absolute; top:12px; left:12px; background:var(--gold); color:#fff; font-size:.65rem; padding:4px 10px; letter-spacing:1px; text-transform:uppercase; }
+  .cat-info { padding:20px; }
+  .cat-info h3 { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; color:var(--navy); margin-bottom:6px; }
+  .cat-info p { font-size:.85rem; color:var(--muted); line-height:1.6; margin-bottom:12px; }
+  .cat-footer { display:flex; align-items:center; justify-content:space-between; }
+  .cat-price { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:700; color:var(--gold); }
+  .cat-wa { background:var(--navy); color:var(--cream); padding:8px 14px; font-size:.7rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none; transition:.3s; }
+  .cat-wa:hover { background:var(--blue); }
+
+  /* INFO STRIP */
+  .info-strip { background:var(--navy); padding:60px; }
+  .info-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; align-items:start; }
+  .info-block h4 { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; color:var(--light-gold); margin-bottom:12px; }
+  .info-block p { font-size:.85rem; color:rgba(247,243,237,0.65); line-height:1.8; }
+  .info-block a { color:var(--light-gold); text-decoration:none; }
+  .hours-row { display:flex; justify-content:space-between; font-size:.85rem; color:rgba(247,243,237,0.65); padding:6px 0; border-bottom:1px solid rgba(200,150,42,0.15); }
+  .wa-big { display:flex; align-items:center; gap:14px; background:#25D366; color:#fff; padding:16px 24px; text-decoration:none; font-size:.9rem; letter-spacing:1px; margin-top:16px; transition:.3s; }
+  .wa-big:hover { background:#1da851; }
+
+  /* FOOTER */
+  footer { background:var(--deep-blue); padding:30px 60px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:700; color:var(--light-gold); }
+  .footer-text { font-size:.8rem; color:rgba(247,243,237,0.35); }
+
+  @media(max-width:768px){
+    nav { padding:14px 20px; }
+    .nav-links { display:none; }
+    .hero-inner { grid-template-columns:1fr; padding:0 20px; }
+    .hero-visual { display:none; }
+    #catalogue,.about-strip,.info-strip { padding:50px 20px; }
+    .about-strip-inner,.about-body,.info-inner { grid-template-columns:1fr; }
+    footer { flex-direction:column; text-align:center; padding:24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Textiles<span class="logo-sub">Established 1998 · Belagavi</span></div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#info">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20inquire%20about%20fabrics" class="nav-wa" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.532 5.86L.073 23.927l6.244-1.635A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.66-.49-5.21-1.352l-.374-.222-3.872 1.014 1.04-3.796-.244-.39A9.975 9.975 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    WhatsApp Inquiry
+  </a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><div class="eyebrow-line"></div><span>Premium Fabric Collection</span></div>
+      <h1 class="hero-title">Weaving<br><em>Colour</em> Into<br>Every Story</h1>
+      <p class="hero-sub">From shimmering silks to crisp cottons — Textiles has been dressing Karnataka's finest occasions for over 25 years.</p>
+      <div class="hero-btns">
+        <a href="#catalogue" class="btn-gold">Browse Catalogue</a>
+        <a href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20see%20your%20collection" class="btn-outline" target="_blank">WhatsApp Inquiry</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><span class="trust-icon">🏆</span><span>25+ Years Trusted</span></div>
+        <div class="trust-item"><span class="trust-icon">🧵</span><span>500+ Fabric Varieties</span></div>
+        <div class="trust-item"><span class="trust-icon">⚡</span><span>Fast Loading Catalogue</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-main-box">🧵</div>
+      <div class="hero-small-boxes">
+        <div class="hero-small-box">🪡</div>
+        <div class="hero-small-box">✂️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="about-strip-inner">
+    <div class="about-label">Who We Are</div>
+    <div class="about-body">
+      <p class="about-para">Founded in 1998, <strong>Textiles</strong> began as a humble shop in Belagavi's cloth market. Today we stock over 500 varieties of fabric — from everyday cottons to premium silks and festival-ready synthetics.</p>
+      <p class="about-para">Our clean, catalogue-style website makes it easy to browse what's in stock before you visit. <strong>Customers now call ahead, plan their purchase, and visit with purpose.</strong> That's the Navrang difference.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOGUE -->
+<section id="catalogue">
+  <div class="cat-inner">
+    <div class="section-eyebrow"><div class="line"></div><span>Product Catalogue</span></div>
+    <h2 class="section-title">Our Fabric Collection</h2>
+    <div class="filter-row">
+      <button class="filter active" onclick="filterCat(this,'all')">All Fabrics</button>
+      <button class="filter" onclick="filterCat(this,'silk')">Silk</button>
+      <button class="filter" onclick="filterCat(this,'cotton')">Cotton</button>
+      <button class="filter" onclick="filterCat(this,'synthetic')">Synthetic</button>
+      <button class="filter" onclick="filterCat(this,'wool')">Wool & Blends</button>
+      <button class="filter" onclick="filterCat(this,'festive')">Festive</button>
+    </div>
+    <div class="cat-grid" id="catGrid">
+      <div class="cat-card" data-cat="silk"><div class="cat-img" style="background:linear-gradient(135deg,#8A1A6A,#C44A9A);">🧣<span class="cat-badge">New Arrival</span></div><div class="cat-info"><h3>Kanjivaram Silk</h3><p>Authentic Tamil Nadu silk with zari borders. Perfect for weddings and festivals.</p><div class="cat-footer"><div class="cat-price">₹850/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Kanjivaram%20Silk" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+      <div class="cat-card" data-cat="cotton"><div class="cat-img" style="background:linear-gradient(135deg,#4A7A6A,#2A5A4A);">🌿<span class="cat-badge">Bestseller</span></div><div class="cat-info"><h3>Pure Khadi Cotton</h3><p>Hand-spun, breathable khadi for everyday wear. Available in 40+ colours.</p><div class="cat-footer"><div class="cat-price">₹220/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Khadi%20Cotton" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+      <div class="cat-card" data-cat="festive"><div class="cat-img" style="background:linear-gradient(135deg,#8A6A1A,#C49A30);">✨</div><div class="cat-info"><h3>Banarasi Brocade</h3><p>Rich brocade with gold and silver threads. The choice for bridal trousseaus.</p><div class="cat-footer"><div class="cat-price">₹1,200/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Banarasi%20Brocade" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+      <div class="cat-card" data-cat="synthetic"><div class="cat-img" style="background:linear-gradient(135deg,#1A3A6A,#2A5AAA);">🔵</div><div class="cat-info"><h3>Georgette Chiffon</h3><p>Lightweight, flowy synthetic ideal for sarees, dupattas, and evening wear.</p><div class="cat-footer"><div class="cat-price">₹320/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Georgette%20Chiffon" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+      <div class="cat-card" data-cat="cotton"><div class="cat-img" style="background:linear-gradient(135deg,#6A3A1A,#AA6030);">🟤</div><div class="cat-info"><h3>South Cotton Checks</h3><p>Traditional woven checks in vibrant colour combinations. Machine washable.</p><div class="cat-footer"><div class="cat-price">₹280/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20South%20Cotton%20Checks" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+      <div class="cat-card" data-cat="wool"><div class="cat-img" style="background:linear-gradient(135deg,#2A2A3A,#4A4A6A);">🧶</div><div class="cat-info"><h3>Pashmina Wool Blend</h3><p>Soft, warm blend of pashmina and merino wool. Perfect for winter shawls.</p><div class="cat-footer"><div class="cat-price">₹560/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Pashmina%20Blend" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+      <div class="cat-card" data-cat="silk"><div class="cat-img" style="background:linear-gradient(135deg,#4A1A6A,#7A2AAA);">💜</div><div class="cat-info"><h3>Raw Silk Dupion</h3><p>Natural silk with a textured finish. Popular for kurtas and formal ethnic wear.</p><div class="cat-footer"><div class="cat-price">₹680/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Raw%20Silk%20Dupion" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+      <div class="cat-card" data-cat="festive"><div class="cat-img" style="background:linear-gradient(135deg,#6A2A1A,#AA4030);">🔴<span class="cat-badge">Festival Pick</span></div><div class="cat-info"><h3>Bandhani Print Cotton</h3><p>Traditional tie-dye printed cotton from Rajasthan. Vibrant and festive.</p><div class="cat-footer"><div class="cat-price">₹350/m</div><a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Bandhani%20Print" class="cat-wa" target="_blank">Inquire</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div class="info-strip" id="info">
+  <div class="info-inner">
+    <div class="info-block">
+      <h4>📍 Visit Our Store</h4>
+      <p>18, Textile Market Road<br>Near Clock Tower, Belagavi<br>Karnataka — 590001</p>
+      <p style="margin-top:12px;"><strong style="color:rgba(247,243,237,0.85);">📞</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+    </div>
+    <div class="info-block">
+      <h4>🕐 Store Hours</h4>
+      <div class="hours-row"><span>Monday – Saturday</span><span>9:30 AM – 8:30 PM</span></div>
+      <div class="hours-row"><span>Sunday</span><span>10:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span>Public Holidays</span><span>Call Ahead</span></div>
+    </div>
+    <div class="info-block">
+      <h4>💬 WhatsApp Inquiry</h4>
+      <p>Browse our catalogue, check availability, or ask for fabric swatches — all on WhatsApp before you visit.</p>
+      <a href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20know%20about%20your%20fabric%20collection" class="wa-big" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.532 5.86L.073 23.927l6.244-1.635A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.66-.49-5.21-1.352l-.374-.222-3.872 1.014 1.04-3.796-.244-.39A9.975 9.975 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Textiles</div>
+  <div class="footer-text">© 2025 Textiles, Belagavi. All rights reserved.</div>
+</footer>
+
+<script>
+function filterCat(btn, cat) {
+  document.querySelectorAll('.filter').forEach(f => f.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.cat-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>
